@@ -5,26 +5,19 @@ import { resolve } from "path";
 import { config } from "dotenv";
 
 import corsConfig from "./config/cors.js";
-import { ratelimit } from "./config/ratelimit.js";
 import errorHandler from "./config/errorHandler.js";
 import notFoundHandler from "./config/notFoundHandler.js";
 
 import animeRouter from "./routes/index.js";
 
 config();
-const app: express.Application = express();
-const PORT: number = Number(process.env.PORT) || 4000;
+const app = express();
+const PORT = Number(process.env.PORT) || 4000;
 
 app.use(morgan("dev"));
 app.use(corsConfig);
 
-// CAUTION: For personal deployments, "refrain" from having an env
-// named "ANIWATCH_API_HOSTNAME". You may face rate limitting
-// and other issues if you do.
-const ISNT_PERSONAL_DEPLOYMENT = Boolean(process?.env?.ANIWATCH_API_HOSTNAME);
-if (ISNT_PERSONAL_DEPLOYMENT) {
-  app.use(ratelimit);
-}
+// Removed the `ratelimit` middleware
 
 app.use(express.static(resolve("public")));
 app.get("/health", (_, res) => res.sendStatus(200));
@@ -40,7 +33,7 @@ if (!Boolean(process?.env?.IS_VERCEL_DEPLOYMENT)) {
   });
 
   // NOTE: remove the `if` block below for personal deployments
-  if (ISNT_PERSONAL_DEPLOYMENT) {
+  if (Boolean(process?.env?.ANIWATCH_API_HOSTNAME)) {
     // don't sleep
     const intervalTime = 9 * 60 * 1000; // 9mins
     setInterval(() => {
