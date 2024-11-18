@@ -19,6 +19,8 @@ async function scrapeAnimeAboutInfo(
     anime: {
       info: {
         id: null,
+        anilistId: null,
+        malId: null,
         name: null,
         poster: null,
         description: null,
@@ -32,6 +34,8 @@ async function scrapeAnimeAboutInfo(
           type: null,
           duration: null,
         },
+        promotionalVideos: [],
+        charactersVoiceActors: [],
       },
       moreInfo: {},
     },
@@ -52,6 +56,16 @@ async function scrapeAnimeAboutInfo(
     });
 
     const $: CheerioAPI = load(mainPage.data);
+
+    try {
+      res.anime.info.anilistId = Number(
+        JSON.parse($("body")?.find("#syncData")?.text())?.anilist_id
+      );
+      res.anime.info.malId = Number(JSON.parse($("body")?.find("#syncData")?.text())?.mal_id);
+    } catch (err) {
+      res.anime.info.anilistId = null;
+      res.anime.info.malId = null;
+    }
 
     const selector: SelectorType = "#ani_detail .container .anis-content";
 
@@ -104,6 +118,37 @@ async function scrapeAnimeAboutInfo(
         ?.replace(/[\s\n]+/g, " ")
         ?.split(" ")
         ?.pop() || null;
+    
+    // get promotional videos
+    $(".block_area.block_area-promotions .block_area-promotions-list .screen-items .item").each(
+      (_, el) => {
+        res.anime.info.promotionalVideos.push({
+          title: $(el).attr("data-title"),
+          source: $(el).attr("data-src"),
+          thumbnail: $(el).find("img").attr("src"),
+        });
+      }
+    );
+
+    // get characters and voice actors
+    $(".block_area.block_area-actors .block-actors-content .bac-list-wrap .bac-item").each(
+      (_, el) => {
+        res.anime.info.charactersVoiceActors.push({
+          character: {
+            id: $(el).find($(".per-info.ltr .pi-avatar")).attr("href")?.split("/")[2] || "",
+            poster: $(el).find($(".per-info.ltr .pi-avatar img")).attr("data-src") || "",
+            name: $(el).find($(".per-info.ltr .pi-detail a")).text(),
+            cast: $(el).find($(".per-info.ltr .pi-detail .pi-cast")).text(),
+          },
+          voiceActor: {
+            id: $(el).find($(".per-info.rtl .pi-avatar")).attr("href")?.split("/")[2] || "",
+            poster: $(el).find($(".per-info.rtl .pi-avatar img")).attr("data-src") || "",
+            name: $(el).find($(".per-info.rtl .pi-detail a")).text(),
+            cast: $(el).find($(".per-info.rtl .pi-detail .pi-cast")).text(),
+          },
+        });
+      }
+    );
 
     // more information
     $(`${selector} .anisc-info-wrap .anisc-info .item:not(.w-hide)`).each(

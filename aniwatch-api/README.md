@@ -13,70 +13,43 @@
 
 # <p align="center">Aniwatch API</p>
 
-  <p align="center">
-    A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
-    <br/><br/>
-    <strong>
-      <a 
-        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
-      > 
-        Bug report
-      </a>
-      ·
-      <a 
-        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
-      >
-        Feature request
-      </a>
-    </strong>
-  </p>
-  <p align="center">
+<div align="center">
+  A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
+  <br/><br/>
+  <strong>
     <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml"
-    >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml/badge.svg" 
-        alt="codeql"
-      />
+      href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
+    > 
+      Bug report
     </a>
+    ·
     <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml"
+      href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
     >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml/badge.svg" 
-        alt="docker-build"
-      />
+      Feature request
     </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml"
-    >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml/badge.svg" alt="test coverage"
-      >
-    </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/stargazers"
-    >
-      <img 
-        src="https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api" alt="stars"
-      >
-    </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/network/members"
-    >
-      <img 
-        src="https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api" alt="forks"
-      >
-    </a>
-    <a 
-      href="https://github.com/consumet/extensions/blob/master/LICENSE"
-    >
-      <img 
-        src="https://img.shields.io/github/license/ghoshRitesh12/aniwatch-api" alt="GitHub"
-      />
-    </a>
-  </p>
-</p>
+  </strong>
+</div>
+
+<br/>
+
+<div align="center">
+
+[![codeql](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml)
+[![docker-build](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml)
+[![test_coverage](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml)
+[![GitHub License](https://img.shields.io/github/license/ghoshRitesh12/aniwatch-api?logo=github&logoColor=%23959da5&labelColor=%23292e34&color=%2331c754)](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE)
+
+</div>
+
+<div align="center">
+
+[![stars](https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api?style=social)](https://github.com/ghoshRitesh12/aniwatch-api/stargazers)
+[![forks](https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api?style=social)](https://github.com/ghoshRitesh12/aniwatch-api/network/members)
+[![issues](https://img.shields.io/github/issues/ghoshRitesh12/aniwatch-api?style=social&logo=github)](https://github.com/ghoshRitesh12/aniwatch-api/issues?q=is%3Aissue+is%3Aopen+)
+[![version](https://img.shields.io/github/v/release/ghoshRitesh12/aniwatch-api?display_name=release&style=social&logo=github)](https://github.com/ghoshRitesh12/aniwatch-api/releases/latest)
+
+</div>
 
 > [!IMPORTANT]
 >
@@ -105,9 +78,11 @@
   - [GET Anime Episode Servers](#get-anime-episode-servers)
   - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
 - [Development](#development)
-- [Support](#support)
+- [Contributors](#contributors)
 - [Thanks](#thanks)
+- [Support](#support)
 - [License](#license)
+- [Star History](#star-history)
 
 ## <span id="installation">💻 Installation</span>
 
@@ -175,7 +150,13 @@ Deploy your own instance of Aniwatch API on Render.
 
 The endpoints exposed by the api are listed below with examples that uses the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), but you can use any http library.
 
+<details>
+
+<summary>
+
 ### `GET` Anime Home Page
+
+</summary>
 
 #### Endpoint
 
@@ -283,7 +264,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime About Info
+
+</summary>
 
 #### Endpoint
 
@@ -326,7 +315,32 @@ console.log(data);
         },
         type: string,
         duration: string
-      }
+      },
+      promotionalVideos: [
+        {
+          title: string | undefined,
+          source: string | undefined,
+          thumbnail: string | undefined
+        },
+        {...},
+      ],
+      characterVoiceActor: [
+        {
+          character: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          },
+          voiceActor: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          }
+        },
+        {...},
+      ]
     }
     moreInfo: {
       aired: string,
@@ -396,26 +410,60 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Search Results
+
+</summary>
 
 #### Endpoint
 
 ```sh
+# basic example
 https://api-aniwatch.onrender.com/anime/search?q={query}&page={page}
+
+# advanced example
+https://api-aniwatch.onrender.com/anime/search?q={query}&genres={genres}&type={type}&sort={sort}&season={season}&language={sub_or_dub}&status={status}&rated={rating}&start_date={yyyy-mm-dd}&end_date={yyyy-mm-dd}&score={score}
 ```
 
 #### Query Parameters
 
-| Parameter |  Type  |                            Description                            | Required? | Default |
-| :-------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
-|    `q`    | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
-|  `page`   | number |                  The page number of the result.                   |    No     |   `1`   |
+|  Parameter   |  Type  |                            Description                            | Required? | Default |
+| :----------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
+|     `q`      | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
+|    `page`    | number |                  The page number of the result.                   |    No     |   `1`   |
+|    `type`    | string |                  Type of the anime. eg: `movie`                   |    No     |   --    |
+|   `status`   | string |            Status of the anime. eg: `finished-airing`             |    No     |   --    |
+|   `rated`    | string |             Rating of the anime. eg: `r+` or `pg-13`              |    No     |   --    |
+|   `score`    | string |           Score of the anime. eg: `good` or `very-good`           |    No     |   --    |
+|   `season`   | string |              Season of the aired anime. eg: `spring`              |    No     |   --    |
+|  `language`  | string |     Language category of the anime. eg: `sub` or `sub-&-dub`      |    No     |   --    |
+| `start_date` | string |       Start date of the anime(yyyy-mm-dd). eg: `2014-10-2`        |    No     |   --    |
+|  `end_date`  | string |        End date of the anime(yyyy-mm-dd). eg: `2010-12-4`         |    No     |   --    |
+|    `sort`    | string |      Order of sorting the anime result. eg: `recently-added`      |    No     |   --    |
+|   `genres`   | string |   Genre of the anime, separated by commas. eg: `isekai,shounen`   |    No     |   --    |
+
+> [!TIP]
+> For both `start_date` and `end_date`, year must be mentioned. If you wanna omit date or month specify `0` instead.
+> Eg: omitting date -> 2014-10-0, omitting month -> 2014-0-12, omitting both -> 2014-0-0
 
 #### Request sample
 
 ```javascript
+// basic example
 const resp = await fetch(
   "https://api-aniwatch.onrender.com/anime/search?q=titan&page=1"
+);
+const data = await resp.json();
+console.log(data);
+
+// advanced example
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/search?q=girls&genres=action,adventure&type=movie&sort=score&season=spring&language=dub&status=finished-airing&rated=pg-13&start_date=2014-0-0&score=good"
 );
 const data = await resp.json();
 console.log(data);
@@ -456,13 +504,26 @@ console.log(data);
   ],
   currentPage: 1,
   totalPages: 1,
-  hasNextPage: false
+  hasNextPage: false,
+  searchQuery: string,
+  searchFilters: {
+    [filter_name]: [filter_value]
+    ...
+  }
 }
 ```
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Search Suggestions
+
+</summary>
 
 #### Endpoint
 
@@ -505,7 +566,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Producer Animes
+
+</summary>
 
 #### Endpoint
 
@@ -594,7 +663,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Genre Animes
+
+</summary>
 
 #### Endpoint
 
@@ -667,7 +744,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Category Anime
+
+</summary>
 
 #### Endpoint
 
@@ -743,7 +828,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Estimated Schedules
+
+</summary>
 
 #### Endpoint
 
@@ -777,6 +870,8 @@ console.log(data);
       time: string, // 24 hours format
       name: string,
       jname: string,
+      airingTimestamp: number,
+      secondsUntilAiring: number
     },
     {...}
   ]
@@ -785,7 +880,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episodes
+
+</summary>
 
 #### Endpoint
 
@@ -828,7 +931,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episode Servers
+
+</summary>
 
 #### Endpoint
 
@@ -872,12 +983,27 @@ console.log(data);
     },
     {...}
   ],
+  raw: [
+    {
+      serverId: 1,
+      serverName: "megacloud",
+    },
+    {...}
+  ],
 }
 ```
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episode Streaming Links
+
+</summary>
 
 #### Endpoint
 
@@ -887,11 +1013,11 @@ https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={serv
 
 #### Query Parameters
 
-| Parameter  |  Type  |                  Description                  | Required? |     Default      |
-| :--------: | :----: | :-------------------------------------------: | :-------: | :--------------: |
-|    `id`    | string |            The id of the episode.             |    Yes    |        --        |
-|  `server`  | string |            The name of the server.            |    No     | `"vidstreaming"` |
-| `category` | string | The category of the episode ('sub' or 'dub'). |    No     |     `"sub"`      |
+| Parameter  |  Type  |                     Description                      | Required? |     Default      |
+| :--------: | :----: | :--------------------------------------------------: | :-------: | :--------------: |
+|    `id`    | string |                The id of the episode.                |    Yes    |        --        |
+|  `server`  | string |               The name of the server.                |    No     | `"vidstreaming"` |
+| `category` | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     |     `"sub"`      |
 
 #### Request sample
 
@@ -934,9 +1060,17 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
 ## <span id="development">👨‍💻 Development</span>
 
 Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/aniwatch-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/CONTRIBUTING.md) file.
+
+## <span id="contributors">✨ Contributors</span>
+
+Thanks to the following people for keeping this project alive and relevant.
+
+[![](https://contrib.rocks/image?repo=ghoshRitesh12/aniwatch-api)](https://github.com/ghoshRitesh12/aniwatch-api/graphs/contributors)
 
 ## <span id="thanks">🤝 Thanks</span>
 
@@ -945,15 +1079,16 @@ Pull requests and stars are always welcome. If you encounter any bug or want to 
 
 ## <span id="support">🙌 Support</span>
 
-Don't forget to leave a star 🌟. You can also follow me on Twitter [@\_riteshghosh](https://twitter.com/_riteshghosh).
+Don't forget to leave a star 🌟. You can also follow me on X (Twitter) [@riteshgsh](https://x.com/riteshgsh).
 
 ## <span id="license">📜 License</span>
 
 This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE) file for more details.
 
-<p align="center">
-  Made with 💖 by
-  <a href="https://github.com/ghoshRitesh12">
-    Ritesh
-  <a>
-<p>
+<br/>
+
+<img
+  id="star-history" 
+  src="https://starchart.cc/ghoshRitesh12/aniwatch-api.svg?variant=adaptive"
+  alt=""
+/>

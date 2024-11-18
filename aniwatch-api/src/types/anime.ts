@@ -43,9 +43,13 @@ export interface TopAiringAnime extends MostPopularAnime {}
 export interface AnimeGeneralAboutInfo
   extends Pick<Anime, CommonAnimeProps>,
     Pick<SpotlightAnime, "description"> {
+  anilistId: number | null;
+  malId: number | null;
   stats: {
     quality: string | null;
   } & Pick<Anime, "duration" | "episodes" | "rating" | "type">;
+  promotionalVideos: AnimePromotionalVideo[];
+  charactersVoiceActors: AnimeCharactersAndVoiceActors[];
 }
 
 export interface RecommendedAnime extends Anime {}
@@ -55,6 +59,24 @@ export interface RelatedAnime extends MostPopularAnime {}
 export interface Season extends Pick<Anime, CommonAnimeProps> {
   isCurrent: boolean;
   title: string | null;
+}
+
+export interface AnimePromotionalVideo {
+  title: string | undefined;
+  source: string | undefined;
+  thumbnail: string | undefined;
+}
+
+export interface AnimeCharactersAndVoiceActors {
+  character: AnimeCharacter;
+  voiceActor: AnimeCharacter;
+}
+
+export interface AnimeCharacter {
+  id: string;
+  poster: string;
+  name: string;
+  cast: string;
 }
 
 export interface AnimeSearchSuggestion
@@ -73,6 +95,7 @@ export interface SubEpisode {
   serverId: number | null;
 }
 export interface DubEpisode extends SubEpisode {}
+export interface RawEpisode extends SubEpisode {}
 
 export type AnimeCategories =
   | "most-favorite"
